@@ -21,6 +21,21 @@ class HomePage(Page):
         s = Label(self, text="Diçka rreth këtij aplikacioni", bg=def_bg, fg=def_fg,font=("Bold",20))
         
         t = Label(self,text="Ky aplikacion... \n.......................... \n.............................", bg=def_bg, fg=def_fg)
+        
+        
+         r = Label(self,text="..........................................",bg=def_bg, fg=def_fg)
+            
+            
+        t.place(x=100, y=100)
+        
+        s.place(x=130, y=50)
+        
+        r.place(x=160, y=150)
+        
+        
+        class TestingPage(Page):    
+        
+        def __init__(self, parent):
 
 
 
