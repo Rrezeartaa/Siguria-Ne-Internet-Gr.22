@@ -74,6 +74,27 @@ class TestingPage(Page):
                         match_text = match.group();
                         match_list.append(match_text)
             file.close()
+            
+        def shkruajNeFile():
+            
+               # def ruaj():
+                    #                      
+            
+                if tt.get("1.0", END)=="\n":
+                    lbl2['text']="Nuk keni shkruar asnjë log file!"
+                elif t.get("1.0",END)=="\n":
+                    lbl2['text']="Nuk ka asnjë rezultat që ta shkruajmë në file!"
+                else:
+                    lbl2.destroy()
+                    window = Toplevel()
+                    window.geometry("350x80")
+                    lbl=Label(window,text="Shkruani file ku dëshironi të ruani daljen")
+                    lbl.place(x=20,y=10)
+
+                    #btn=Button(window,text="Ruaj",command=ruaj,bg='#7B7F7F',fg=def_fg)
+                    #btn.place(x=270,y=28)
+                    text = Text(window, width=25, height=1, font=("Bold",12))
+                    text.place(x=20, y=30)  
         
         b=Button(self,text=" Kërko ",command=main,bg='#7B7F7F',fg=def_fg)
         b.place(x=460,y=50)
