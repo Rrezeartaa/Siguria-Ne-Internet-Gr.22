@@ -56,6 +56,24 @@ class TestingPage(Page):
             else:
                 lbl2.destroy()
                 parseData(log_file_path, regex, read_line=True)
+                
+        def parseData(log_file_path, regex, read_line=True):
+            with open(log_file_path, "r") as file:
+                match_list = []
+                if read_line == True:
+                    for line in file:
+                        for match in re.finditer(regex, line, re.S):
+                            match_text = match.group()
+                            match_list.append(match_text)
+                            t.insert("1.0",match_text+"\n")
+               # elif read_line==False:
+                #    t.insert("1.0","Nuk u gjeten rezultate!")
+                else:
+                    data = file.read()
+                    for match in re.finditer(regex, data, re.S):
+                        match_text = match.group();
+                        match_list.append(match_text)
+            file.close()
         
         b=Button(self,text=" Kërko ",command=main,bg='#7B7F7F',fg=def_fg)
         b.place(x=460,y=50)
