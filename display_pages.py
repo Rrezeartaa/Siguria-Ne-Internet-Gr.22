@@ -36,6 +36,21 @@ class HomePage(Page):
         class TestingPage(Page):    
         
         def __init__(self, parent):
+            
+             Page.__init__(self, parent)
+                
+                
+        t = Text(self, width=50, height=20, font=("Bold",12))
+        
+        t.place(x=50, y=100)
+        
+        titull = Label(self, text="Testimi", bg=def_bg, fg=def_fg,font=("Bold",18))
+        
+        titull.place(x=220, y=5)
+
+        tt = Text(self, width=43, height=1, font=("Bold",12))
+        
+        tt.place(x=50, y=50)
 
 
 
