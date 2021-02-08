@@ -37,9 +37,26 @@ class TestingPage(Page):
         tt = Text(self, width=43, height=1, font=("Bold",12))
         tt.place(x=50, y=50)
 
+        lbl2=Label(self,text="",bg=def_bg,fg='red')
+        lbl2.place(x=50,y=470)
 
+        lbl3=Label(self,text="",bg=def_bg)
+        lbl3.place(x=50,y=470)
+        
+        def main():
+            t.delete('1.0','end')
+            log_file_path =tt.get('1.0',"end-1c")
+         
+            regex = r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b"
 
-
+            if ".log" not in log_file_path or not log_file_path:
+                lbl2['text']="Nuk keni shkruar një log file!"
+            elif not Path(log_file_path).exists():
+                lbl2['text']="Nuk ekziston ky log file në këtë path!"
+            else:
+                lbl2.destroy()
+                parseData(log_file_path, regex, read_line=True)
+        
         b=Button(self,text=" Kërko ",command=main,bg='#7B7F7F',fg=def_fg)
         b.place(x=460,y=50)
 
