@@ -37,3 +37,11 @@ class ScrollBar(Frame):
         self.c_Canvas.bind("<MouseWheel>", self.OnMouseWheel)
 
         parent.after(1, self.add_binds)
+        
+          def add_binds(self):
+
+        for i in ScrollOnItemsList:
+            
+            i.bind("<MouseWheel>", self.OnMouseWheel)
+            
+            i.text.bind("<MouseWheel>", self.OnMouseWheel)
