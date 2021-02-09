@@ -45,3 +45,11 @@ class ScrollBar(Frame):
             i.bind("<MouseWheel>", self.OnMouseWheel)
             
             i.text.bind("<MouseWheel>", self.OnMouseWheel)
+            
+              def OnMouseWheel(self, event):
+                    
+        self.threashold = 1
+        
+        if event.delta > self.last_delta:
+            
+            
