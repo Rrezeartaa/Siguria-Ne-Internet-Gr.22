@@ -52,4 +52,11 @@ class ScrollBar(Frame):
         
         if event.delta > self.last_delta:
             
+             event.delta =- self.threashold
+                
+        else:
+            
+            event.delta = + self.threashold
+
+        self.c_Canvas.yview("scroll", event.delta, "units")
             
