@@ -59,4 +59,10 @@ class ScrollBar(Frame):
             event.delta = + self.threashold
 
         self.c_Canvas.yview("scroll", event.delta, "units")
+        
+        return "break"
+
+    def move_down(self):
+        
+        self.c_Canvas.yview("scroll", 10, "units")
             
