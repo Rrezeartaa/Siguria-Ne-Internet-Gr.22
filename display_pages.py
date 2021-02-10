@@ -37,6 +37,9 @@ class TestingPage(Page):
         tt = Text(self, width=43, height=1, font=("Bold",12))
         tt.place(x=50, y=50)
 
+        tReg=Text(self, width=43, height=1, font=("Bold",12))
+        tReg.place(x=50, y=90)
+        
         lbl2=Label(self,text="",bg=def_bg,fg='red')
         lbl2.place(x=50,y=470)
 
@@ -47,14 +50,15 @@ class TestingPage(Page):
             t.delete('1.0','end')
             log_file_path =tt.get('1.0',"end-1c")
          
-            regex = r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b"
+            regex=tReg.get('1.0',"end-1c")
 
             if ".log" not in log_file_path or not log_file_path:
                 lbl2['text']="Nuk keni shkruar një log file!"
             elif not Path(log_file_path).exists():
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
-                lbl2.destroy()
+                lbl3['text']=""                
+                lbl2['text']=""
                 parseData(log_file_path, regex, read_line=True)
                 
         def parseData(log_file_path, regex, read_line=True):
@@ -77,22 +81,34 @@ class TestingPage(Page):
             
         def shkruajNeFile():
             
-               # def ruaj():
-                    #                      
+                def ruaj():
+                    
+                    fajlli=text.get("1.0","end-1c")
+                    if ".txt" not in fajlli:
+                        lbl['fg']='red'
+                        lbl['text'] ="Nuk keni shënuar një text file!"
+                    else:                      
+                        lbl3['fg']='green'
+                        lbl3['text']="Rezultati u ruajt me sukses në file"
+                        window.destroy()
+                        with open(fajlli, "w+") as file:
+                            file.write("Rezultati:\n")
+                            file.write(t.get('1.0',"end-1c"))
+                        file.close()                      
             
                 if tt.get("1.0", END)=="\n":
                     lbl2['text']="Nuk keni shkruar asnjë log file!"
                 elif t.get("1.0",END)=="\n":
                     lbl2['text']="Nuk ka asnjë rezultat që ta shkruajmë në file!"
                 else:
-                    lbl2.destroy()
+                    lbl2['text']=""
                     window = Toplevel()
                     window.geometry("350x80")
                     lbl=Label(window,text="Shkruani file ku dëshironi të ruani daljen")
                     lbl.place(x=20,y=10)
 
-                    #btn=Button(window,text="Ruaj",command=ruaj,bg='#7B7F7F',fg=def_fg)
-                    #btn.place(x=270,y=28)
+                    btn=Button(window,text="Ruaj",command=ruaj,bg='#7B7F7F',fg=def_fg)
+                    btn.place(x=270,y=28)
                     text = Text(window, width=25, height=1, font=("Bold",12))
                     text.place(x=20, y=30)  
         
