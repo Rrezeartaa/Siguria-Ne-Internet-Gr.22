@@ -17,32 +17,32 @@ class HomePage(Page):
         s = Label(self, text="Diçka rreth këtij aplikacioni", bg=def_bg, fg=def_fg,font=("Bold",20))
         t = Label(self,text="Ky aplikacion ka të bëjë me kërkimin në log files."+
         " \nPërdoruesi ka mundësi të japë regex-in për të gjetur ip adresa të caktuara, si: MAC adresa, \n"+
-        "IP adresa të ndryshme po në bazë të regex-it mund të kërkojnë edhe gjëra të tjera në log file.", bg=def_bg, fg=def_fg)
+        "IP adresa të ndryshme po në bazë të regex-it mund të kërkojnë edhe gjëra të tjera në log file.", bg=def_bg, fg=def_fg, font=("Bold",12))
         s.place(x=390, y=50)
-        t.place(x=310, y=100)
+        t.place(x=240, y=100)
         image1 = Image.open("fotot/mac.png")
         imagee = image1.resize((250, 150), Image.ANTIALIAS)
         test = ImageTk.PhotoImage(imagee)
 
-        label1 = Label(image=test)
+        label1 = Label(self,image=test)
         label1.image = test
-        label1.place(x=300, y=250)
+        label1.place(x=120, y=250)
 
         image2 = Image.open("fotot/log.png")
         imageee = image2.resize((80, 100), Image.ANTIALIAS)
         test = ImageTk.PhotoImage(imageee)
 
-        label2 = Label(image=test)
+        label2 = Label(self,image=test)
         label2.image = test
-        label2.place(x=700, y=270)
+        label2.place(x=530, y=270)
 
         image3 = Image.open("fotot/ip.png")
         imageee3 = image3.resize((250, 150), Image.ANTIALIAS)
         test = ImageTk.PhotoImage(imageee3)
 
-        label3 = Label(image=test)
+        label3 = Label(self,image=test)
         label3.image = test
-        label3.place(x=930, y=250)
+        label3.place(x=750, y=250)
         
 class TestingPage(Page):    
         
