@@ -5,22 +5,44 @@ import re
 import time
 from time import strftime
 from pathlib import Path
+from PIL import ImageTk,Image
 
 def_bg = "#201F1E"
 def_fg = "lightgrey"
 
 class HomePage(Page):
     def __init__(self, parent):
-        
         Page.__init__(self, parent)
-        
-        s = Label(self, text="Diçka rreth këtij aplikacioni", bg=def_bg, fg=def_fg,font=("Bold",20))        
-        t = Label(self,text="Ky aplikacion... \n.......................... \n.............................", bg=def_bg, fg=def_fg)        
-        r = Label(self,text="..........................................",bg=def_bg, fg=def_fg)
-          
-        s.place(x=130, y=50)
-        t.place(x=100, y=100)                
-        r.place(x=160, y=150)
+
+        s = Label(self, text="Diçka rreth këtij aplikacioni", bg=def_bg, fg=def_fg,font=("Bold",20))
+        t = Label(self,text="Ky aplikacion ka të bëjë me kërkimin në log files."+
+        " \nPërdoruesi ka mundësi të japë regex-in për të gjetur ip adresa të caktuara, si: MAC adresa, \n"+
+        "IP adresa të ndryshme po në bazë të regex-it mund të kërkojnë edhe gjëra të tjera në log file.", bg=def_bg, fg=def_fg)
+        s.place(x=390, y=50)
+        t.place(x=310, y=100)
+        image1 = Image.open("fotot/mac.png")
+        imagee = image1.resize((250, 150), Image.ANTIALIAS)
+        test = ImageTk.PhotoImage(imagee)
+
+        label1 = Label(image=test)
+        label1.image = test
+        label1.place(x=300, y=250)
+
+        image2 = Image.open("fotot/log.png")
+        imageee = image2.resize((80, 100), Image.ANTIALIAS)
+        test = ImageTk.PhotoImage(imageee)
+
+        label2 = Label(image=test)
+        label2.image = test
+        label2.place(x=700, y=270)
+
+        image3 = Image.open("fotot/ip.png")
+        imageee3 = image3.resize((250, 150), Image.ANTIALIAS)
+        test = ImageTk.PhotoImage(imageee3)
+
+        label3 = Label(image=test)
+        label3.image = test
+        label3.place(x=930, y=250)
         
 class TestingPage(Page):    
         
