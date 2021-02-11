@@ -63,10 +63,27 @@ class TestingPage(Page):
         tReg.place(x=50, y=90)
         
         lbl2=Label(self,text="",bg=def_bg,fg='red')
-        lbl2.place(x=50,y=470)
+        lbl2.place(x=50,y=430)
 
         lbl3=Label(self,text="",bg=def_bg)
-        lbl3.place(x=50,y=470)
+        lbl3.place(x=50,y=430)
+        
+        ipv4 = Image.open("IPv4.jpg")
+        imazhi = ipv4.resize((200, 120), Image.ANTIALIAS)
+        testim = ImageTk.PhotoImage(imazhi)  
+
+        ipv6 = Image.open("ipv6.jpg")
+        imazhi2 = ipv6.resize((200, 120), Image.ANTIALIAS)
+        testim2 = ImageTk.PhotoImage(imazhi2)
+
+        mac = Image.open("mac.jpg")
+        imazhi3 = mac.resize((200, 120), Image.ANTIALIAS)
+        testim3 = ImageTk.PhotoImage(imazhi3)
+
+        zgjedhja = Label(self,text="Në këtë pjesë duke klikuar mbi fotografi, mund të \n"+
+        "zgjedhni se çfarë dëshironi të gjeni në log file.", bg=def_bg, fg=def_fg,font=("Bold",12))
+
+        zgjedhja.place(x=640, y=70)
         
         def main():
             t.delete('1.0','end')
