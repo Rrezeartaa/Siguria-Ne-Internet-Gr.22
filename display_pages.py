@@ -68,15 +68,15 @@ class TestingPage(Page):
         lbl3=Label(self,text="",bg=def_bg)
         lbl3.place(x=50,y=430)
         
-        ipv4 = Image.open("IPv4.jpg")
+        ipv4 = Image.open("fotot/IPv4.jpg")
         imazhi = ipv4.resize((200, 120), Image.ANTIALIAS)
         testim = ImageTk.PhotoImage(imazhi)  
 
-        ipv6 = Image.open("ipv6.jpg")
+        ipv6 = Image.open("fotot/ipv6.jpg")
         imazhi2 = ipv6.resize((200, 120), Image.ANTIALIAS)
         testim2 = ImageTk.PhotoImage(imazhi2)
 
-        mac = Image.open("mac.jpg")
+        mac = Image.open("fotot/mac.jpg")
         imazhi3 = mac.resize((200, 120), Image.ANTIALIAS)
         testim3 = ImageTk.PhotoImage(imazhi3)
 
@@ -156,8 +156,25 @@ class TestingPage(Page):
 
         b=Button(self,text="Shkruaj në file",command=shkruajNeFile,bg='#7B7F7F',fg=def_fg)
         b.place(x=420,y=470)
+        
+        #def fillipv4():
+            
+        #def fillipv6():
+            
+        #def fillMac():
 
 
+        button1=Button(self, text = '', image = testim, command='')
+        button1.image=testim
+        button1.place(x=580, y=150)
+
+        button2=Button(self, text = '', image = testim2, command='')
+        button2.image=testim2
+        button2.place(x=820, y=150)
+
+        button3=Button(self, text = '', image = testim3, command='')
+        button3.image=testim3
+        button3.place(x=710, y=300)
 
 
 
