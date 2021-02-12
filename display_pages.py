@@ -157,12 +157,29 @@ class TestingPage(Page):
         b=Button(self,text="Shkruaj në file",command=shkruajNeFile,bg='#7B7F7F',fg=def_fg)
         b.place(x=420,y=470)
         
-        #def fillipv4():
+        def fillipv4():
             
-        #def fillipv6():
-            
-        #def fillMac():
-
+            t.delete('1.0','end')        
+            lbl3['text']=""              
+            lbl2['text']=""     
+            log_file_path =tt.get('1.0',"end-1c")            
+            parseData(log_file_path, r"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})", read_line=True)
+       
+        def fillipv6():
+                    
+            t.delete('1.0','end')  
+            lbl3['text']=""    
+            lbl2['text']=""    
+            log_file_path =tt.get('1.0',"end-1c")       
+            parseData(log_file_path, r"(([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4})", read_line=True) #ende permiresime
+           
+        def fillMac():
+               
+            t.delete('1.0','end')              
+            lbl3['text']=""                
+            lbl2['text']=""              
+            log_file_path =tt.get('1.0',"end-1c")
+            parseData(log_file_path, r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", read_line=True)
 
         button1=Button(self, text = '', image = testim, command='')
         button1.image=testim
@@ -177,40 +194,6 @@ class TestingPage(Page):
         button3.place(x=710, y=300)
         
         
-        def fillipv4():
-            
-            t.delete('1.0','end')
-            
-            lbl3['text']=""              
-            
-             lbl2['text']=""
-                
-            log_file_path =tt.get('1.0',"end-1c")
-            
-            parseData(log_file_path, r"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})", read_line=True)
-            
-            
-            
-               def fillipv6():
-                    
-            t.delete('1.0','end')
-            
-            lbl3['text']=""  
-  
-            lbl2['text']=""
-    
-            log_file_path =tt.get('1.0',"end-1c")
         
-            parseData(log_file_path, r"(([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4})", read_line=True) #ende permiresime
-            def fillMac():
-                t.delete('1.0','end')
-                
-                lbl3['text']="" 
-                
-                lbl2['text']=""
-                
-                log_file_path =tt.get('1.0',"end-1c")
-                
-                parseData(log_file_path, r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", read_line=True)
 
  
