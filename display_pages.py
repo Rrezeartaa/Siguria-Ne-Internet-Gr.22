@@ -59,6 +59,12 @@ class TestingPage(Page):
         tt = Text(self, width=43, height=1, font=("Bold",12))
         tt.place(x=50, y=50)
 
+        log=Label(self,text="Shkruani emrin e log file:",bg=def_bg,fg=def_fg)
+        log.place(x=50,y=49)
+
+        lblRegex=Label(self,text="Shkruani regex-in:",bg=def_bg,fg=def_fg)
+        lblRegex.place(x=50,y=95)
+        
         tReg=Text(self, width=43, height=1, font=("Bold",12))
         tReg.place(x=50, y=90)
         
@@ -86,13 +92,13 @@ class TestingPage(Page):
         zgjedhja.place(x=640, y=70)
         
         def main():
+            
             t.delete('1.0','end')
-            log_file_path =tt.get('1.0',"end-1c")
-         
+            log_file_path =tt.get('1.0',"end-1c")      
             regex=tReg.get('1.0',"end-1c")
 
-            if ".log" not in log_file_path or not log_file_path:
-                lbl2['text']="Nuk keni shkruar një log file!"
+            if ".log" not in log_file_path or not log_file_path or not regex:
+                lbl2['text']="Nuk keni shkruar një log file apo ndonjë regular expression!"
             elif not Path(log_file_path).exists():
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
@@ -109,8 +115,6 @@ class TestingPage(Page):
                             match_text = match.group()
                             match_list.append(match_text)
                             t.insert("1.0",match_text+"\n")
-               # elif read_line==False:
-                #    t.insert("1.0","Nuk u gjeten rezultate!")
                 else:
                     data = file.read()
                     for match in re.finditer(regex, data, re.S):
@@ -152,10 +156,10 @@ class TestingPage(Page):
                     text.place(x=20, y=30)  
         
         b=Button(self,text=" Kërko ",command=main,bg='#7B7F7F',fg=def_fg)
-        b.place(x=460,y=50)
+        b.place(x=457,y=92)
 
         b=Button(self,text="Shkruaj në file",command=shkruajNeFile,bg='#7B7F7F',fg=def_fg)
-        b.place(x=420,y=470)
+        b.place(x=420,y=445)
         
         def fillipv4():
             log_file_path =tt.get('1.0',"end-1c")
@@ -164,6 +168,7 @@ class TestingPage(Page):
             elif not Path(log_file_path).exists():
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
+                tReg.delete('1.0','end')
                 t.delete('1.0','end')
                 lbl3['text']=""              
                 lbl2['text']=""             
@@ -176,6 +181,7 @@ class TestingPage(Page):
             elif not Path(log_file_path).exists():
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
+                tReg.delete('1.0','end')
                 t.delete('1.0','end')
                 lbl3['text']=""              
                 lbl2['text']=""
@@ -188,6 +194,7 @@ class TestingPage(Page):
             elif not Path(log_file_path).exists():
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
+                tReg.delete('1.0','end')
                 t.delete('1.0','end')
                 lbl3['text']=""              
                 lbl2['text']=""
