@@ -175,6 +175,15 @@ class TestingPage(Page):
         button3=Button(self, text = '', image = testim3, command='')
         button3.image=testim3
         button3.place(x=710, y=300)
+        
+        
+        def fillipv4():
+            
+            t.delete('1.0','end')
+            
+            lbl3['text']=""              
+            
+            
 
 
 
