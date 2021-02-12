@@ -196,7 +196,12 @@ class TestingPage(Page):
             t.delete('1.0','end')
             
             lbl3['text']=""  
-
+  
+            lbl2['text']=""
+    
+            log_file_path =tt.get('1.0',"end-1c")
+        
+            parseData(log_file_path, r"(([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4})", read_line=True) #ende permiresime
             
 
 
