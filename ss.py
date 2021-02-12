@@ -3,8 +3,8 @@ from display_pages import *
 
 root = Tk()
 root.resizable(False, False)
-root.geometry("750x510")
-main_frame = Frame(root, bg="grey", width=1000, height=1000)
+root.geometry("1300x500")
+main_frame = Frame(root, bg="grey", width=1100, height=1000)
 main_frame.place(x=200, y=0)
 
 sidebar = SideBar(root)
