@@ -5,7 +5,7 @@ ScrollOnItemsList = []
 
 class ScrollBar(Frame):
     def __init__(self, parent):
-        self.height = 518
+        self.height = 900
         self.width = 200
 
         Frame.__init__(self, parent, width=self.width, height=self.height, bg="grey")
@@ -50,16 +50,13 @@ class ScrollBar(Frame):
                     
         self.threashold = 1
         
-        if event.delta > self.last_delta:
-            
+        if event.delta > self.last_delta:         
              event.delta =- self.threashold
                 
-        else:
-            
+        else:         
             event.delta = + self.threashold
 
-        self.c_Canvas.yview("scroll", event.delta, "units")
-        
+        self.c_Canvas.yview("scroll", event.delta, "units")       
         return "break"
 
     def move_down(self):
