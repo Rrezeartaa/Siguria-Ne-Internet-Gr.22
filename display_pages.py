@@ -183,6 +183,11 @@ class TestingPage(Page):
             
             lbl3['text']=""              
             
+             lbl2['text']=""
+                
+            log_file_path =tt.get('1.0',"end-1c")
+            
+            parseData(log_file_path, r"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})", read_line=True)
             
 
 
