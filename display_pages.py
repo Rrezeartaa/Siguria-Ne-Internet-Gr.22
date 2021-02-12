@@ -189,6 +189,15 @@ class TestingPage(Page):
             
             parseData(log_file_path, r"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})", read_line=True)
             
+            
+            
+               def fillipv6():
+                    
+            t.delete('1.0','end')
+            
+            lbl3['text']=""  
+
+            
 
 
 
