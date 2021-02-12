@@ -158,38 +158,50 @@ class TestingPage(Page):
         b.place(x=420,y=470)
         
         def fillipv4():
-            
-            t.delete('1.0','end')        
-            lbl3['text']=""              
-            lbl2['text']=""     
-            log_file_path =tt.get('1.0',"end-1c")            
-            parseData(log_file_path, r"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})", read_line=True)
-       
-        def fillipv6():
-                    
-            t.delete('1.0','end')  
-            lbl3['text']=""    
-            lbl2['text']=""    
-            log_file_path =tt.get('1.0',"end-1c")       
-            parseData(log_file_path, r"(([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4})", read_line=True) #ende permiresime
-           
-        def fillMac():
-               
-            t.delete('1.0','end')              
-            lbl3['text']=""                
-            lbl2['text']=""              
             log_file_path =tt.get('1.0',"end-1c")
-            parseData(log_file_path, r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", read_line=True)
+            if ".log" not in log_file_path or not log_file_path:
+                lbl2['text']="Nuk keni shkruar një log file!"
+            elif not Path(log_file_path).exists():
+                lbl2['text']="Nuk ekziston ky log file në këtë path!"
+            else:
+                t.delete('1.0','end')
+                lbl3['text']=""              
+                lbl2['text']=""             
+                parseData(log_file_path, r"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})", read_line=True)
+            
+        def fillipv6():
+            log_file_path =tt.get('1.0',"end-1c")
+            if ".log" not in log_file_path or not log_file_path:
+                lbl2['text']="Nuk keni shkruar një log file!"
+            elif not Path(log_file_path).exists():
+                lbl2['text']="Nuk ekziston ky log file në këtë path!"
+            else:
+                t.delete('1.0','end')
+                lbl3['text']=""              
+                lbl2['text']=""
+                parseData(log_file_path, r"([0-9a-fA-F][0-9a-fA-F]{0,3}:){7}([0-9a-fA-F][0-9a-fA-F]{0,3}){1}", read_line=True) 
+            
+        def fillMac():
+            log_file_path =tt.get('1.0',"end-1c")
+            if ".log" not in log_file_path or not log_file_path:
+                lbl2['text']="Nuk keni shkruar një log file!"
+            elif not Path(log_file_path).exists():
+                lbl2['text']="Nuk ekziston ky log file në këtë path!"
+            else:
+                t.delete('1.0','end')
+                lbl3['text']=""              
+                lbl2['text']=""
+                parseData(log_file_path, r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", read_line=True)
 
-        button1=Button(self, text = '', image = testim, command='')
+        button1=Button(self, text = '', image = testim, command=fillipv4)
         button1.image=testim
         button1.place(x=580, y=150)
 
-        button2=Button(self, text = '', image = testim2, command='')
+        button2=Button(self, text = '', image = testim2, command=fillipv6)
         button2.image=testim2
         button2.place(x=820, y=150)
 
-        button3=Button(self, text = '', image = testim3, command='')
+        button3=Button(self, text = '', image = testim3, command=fillMac)
         button3.image=testim3
         button3.place(x=710, y=300)
         
