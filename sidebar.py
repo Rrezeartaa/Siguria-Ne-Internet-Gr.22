@@ -3,7 +3,6 @@ from scrollbar import *
 
 side_bar_tab_list = []
 
-
 class SideBar(ScrollBar):
     def __init__(self, parent, *args, **kwargs):
         ScrollBar.__init__(self, parent)
