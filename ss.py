@@ -27,6 +27,7 @@ editmenu.add_separator()
 
 editmenu.add_command(label="Cut",accelerator="Ctrl+X",command=lambda:root.focus_get().event_generate('<<Cut>>'))
 editmenu.add_command(label="Copy",accelerator="Ctrl+C",command=lambda:root.focus_get().event_generate('<<Copy>>'))
+editmenu.add_command(label="Paste",accelerator="Ctrl+V",command=lambda:root.focus_get().event_generate('<<Paste>>'))
 
 menubar.add_cascade(label="Edit", menu=editmenu)
 
