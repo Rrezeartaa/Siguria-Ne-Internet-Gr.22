@@ -4,7 +4,7 @@ Si detyrë kemi pasur zhvillimin e aplikacionit i cili përdor regular expressio
 
 ### Ekzekutimi
 
-Për të filluar ekzekutimin e aplikacionit, duhet të shkoni tek fajlli ss.py dhe të klikoni në Run > Run Module
+Për të filluar ekzekutimin e aplikacionit, duhet të shkoni tek fajlli ss.py dhe të klikoni në Run > Run Module. Në mënyrë që ekzekutimi të funksionojë duhet t'i instaloni libraritë të cilat mund të mos i keni me anë të komandës pip install <emri i librarisë> .
 
 ![Screenshot (9)](https://user-images.githubusercontent.com/56273238/107850004-84617680-6dff-11eb-84fa-a8206962e4ae.png)
 
