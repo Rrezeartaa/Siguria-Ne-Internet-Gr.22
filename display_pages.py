@@ -16,10 +16,12 @@ class HomePage(Page):
 
         s = Label(self, text="Diçka rreth këtij aplikacioni", bg=def_bg, fg=def_fg,font=("Bold",20))
         t = Label(self,text="Ky aplikacion ka të bëjë me kërkimin në log files."+
-        " \nPërdoruesi ka mundësi të japë regex-in për të gjetur ip adresa të caktuara, si: MAC adresa, \n"+
-        "IP adresa të ndryshme po në bazë të regex-it mund të kërkojnë edhe gjëra të tjera në log file.", bg=def_bg, fg=def_fg, font=("Bold",12))
+        " \nPërdoruesi ka mundësi të japë regex-in për të gjetur MAC adresa,\n"+
+        "IP adresa, po në bazë të regex-it mund të kërkojnë edhe gjëra të tjera në\n"+
+        " log file. Mjafton vetëm të shënojnë emrin e log file dhe regex-in e caktuar\n"+
+        "apo vetëm të shënojnë emrin e log file dhe të klikojnë në njërën nga opsionet me foto.", bg=def_bg, fg=def_fg,font=("Bold",12))
         s.place(x=390, y=50)
-        t.place(x=240, y=100)
+        t.place(x=265, y=100)
         image1 = Image.open("fotot/mac.png")
         imagee = image1.resize((250, 150), Image.ANTIALIAS)
         test = ImageTk.PhotoImage(imagee)
