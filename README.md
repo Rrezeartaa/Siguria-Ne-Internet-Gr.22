@@ -60,6 +60,10 @@ Nëse nuk ka rezultat në dalje, atëherë del mesazhi poshtë textbox-it të tr
 
 ![skarezultat](https://user-images.githubusercontent.com/56273238/107849667-1b78ff00-6dfd-11eb-9737-052c97e142ca.JPG)
 
+Nëse nuk kemi shënuar ndonjë log file që të dalin rezultatet e caktuara del mesazhi se nuk kemi shkruar log file:
+
+![ruajF](https://user-images.githubusercontent.com/56273238/107858739-1dab7f80-6e36-11eb-8ce2-720a78458948.JPG)
+
 Në kuadër të aplikacionit kemi përfshirë edhe një menubar ku përmes saj mund të dalim nga aplikacioni (Exit) si dhe të kopjojmë tekst, të zhbëjmë ndonjë veprim, etj.
 Më poshtë kemi pamjet se çfarë përmban menubar:
 
