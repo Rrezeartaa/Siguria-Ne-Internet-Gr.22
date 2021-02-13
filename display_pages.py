@@ -172,39 +172,45 @@ class TestingPage(Page):
         b.place(x=390,y=445)
         
         def fillipv4():
+            tReg.delete('1.0','end')
             log_file_path =tt.get('1.0',"end-1c")
             if ".log" not in log_file_path or not log_file_path:
+                lbl3['text']=""
                 lbl2['text']="Nuk keni shkruar një log file!"
             elif not Path(log_file_path).exists():
+                lbl3['text']=""
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
-                tReg.delete('1.0','end')
                 t.delete('1.0','end')
                 lbl3['text']=""              
                 lbl2['text']=""             
                 parseData(log_file_path, r"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})", read_line=True)
             
         def fillipv6():
+            tReg.delete('1.0','end')
             log_file_path =tt.get('1.0',"end-1c")
             if ".log" not in log_file_path or not log_file_path:
+                lbl3['text']=""
                 lbl2['text']="Nuk keni shkruar një log file!"
             elif not Path(log_file_path).exists():
+                lbl3['text']=""
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
-                tReg.delete('1.0','end')
                 t.delete('1.0','end')
                 lbl3['text']=""              
                 lbl2['text']=""
                 parseData(log_file_path, r"([0-9a-fA-F][0-9a-fA-F]{0,3}:){7}([0-9a-fA-F][0-9a-fA-F]{0,3}){1}", read_line=True) 
             
         def fillMac():
+            tReg.delete('1.0','end')
             log_file_path =tt.get('1.0',"end-1c")
             if ".log" not in log_file_path or not log_file_path:
+                tReg.delete('1.0','end')
                 lbl2['text']="Nuk keni shkruar një log file!"
             elif not Path(log_file_path).exists():
+                tReg.delete('1.0','end')
                 lbl2['text']="Nuk ekziston ky log file në këtë path!"
             else:
-                tReg.delete('1.0','end')
                 t.delete('1.0','end')
                 lbl3['text']=""              
                 lbl2['text']=""
