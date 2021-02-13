@@ -14,10 +14,10 @@ Aplikacionin e kemi krijuar në atë formë që të përmbajë dy faqe, njërën
 
 ![aplikacioni](https://user-images.githubusercontent.com/56273238/107849815-fafd7480-6dfd-11eb-8833-26329b16d193.JPG)
 
-Pjesa për testim përmban tre textbox-a: njërin për të shënuar path-in e log fajllit, njërin për të shënuar regular expression dhe tjetrin për shfaqjen e gjetjeve në log file. Në të njëjtën dritare përdoruesi ka mundësi që përmes klikimit të fotos së caktuar të gjejë rezultatet e caktuara në log file. Textbox-i i tretë përmban edhe një scrollbar që në rast që ka rezultate të mund t'i shohim.
+Pjesa për testim përmban tre textbox-a: njërin për të shënuar path-in e log fajllit, njërin për të shënuar regular expression dhe tjetrin për shfaqjen e gjetjeve në log file. Në të njëjtën dritare përdoruesi ka mundësi që përmes klikimit të fotos së caktuar të gjejë rezultatet e caktuara në log file. Textbox-i i tretë përmban edhe një scrollbar që në rast që ka më shumë rezultate sesa që nxë, të mund t'i shohim.
 
 ![Screenshot (8)](https://user-images.githubusercontent.com/56273238/107849852-3d26b600-6dfe-11eb-8ffb-c6ab74a2baae.png)
-
+ 
 ### Rastet e testimit
 
 Për të realizuar gjetjen në log files duhet së pari të shënojmë path-in e log file në textbox-in e parë në mënyrë që të shfaqen gjetjet e caktuara nga log file vetëm nga një herë (pra nuk shfaqen si duplikate):
