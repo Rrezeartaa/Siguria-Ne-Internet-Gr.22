@@ -68,4 +68,10 @@ Më poshtë kemi pamjet se çfarë përmban menubar:
 ![screenshot2](https://user-images.githubusercontent.com/56273238/107850715-b45f4880-6e04-11eb-8e35-ea05e33922a9.png)
 
 
-Për të realizuar këtë aplikacion jemi bazuar në tutoriale të ndryshme për tkinter.
+Për të realizuar këtë aplikacion jemi bazuar në tutoriale të ndryshme për tkinter:
+
+https://pythonicways.wordpress.com/2016/12/20/log-file-parsing-in-python/
+
+https://www.tutorialspoint.com/python/tk_scrollbar.htm
+
+http://etutorials.org/Programming/Python+tutorial/Part+III+Python+Library+and+Extension+Modules/Chapter+16.+Tkinter+GUIs/16.9+Tkinter+Events/
