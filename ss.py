@@ -2,6 +2,7 @@ from sidebar import *
 from display_pages import *
 
 root = Tk()
+root.title("LogFiles Application")
 root.resizable(False, False)
 root.geometry("1300x500")
 main_frame = Frame(root, bg="grey", width=1100, height=1000)
