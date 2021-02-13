@@ -12,7 +12,7 @@ Për të filluar ekzekutimin e aplikacionit, duhet të shkoni tek fajlli ss.py d
 
 Aplikacionin e kemi krijuar në atë formë që të përmbajë dy faqe, njërën për një përshkrim të shkurtër të aplikacionit dhe tjetrën për testim. 
 
-![aplikacioni](https://user-images.githubusercontent.com/56273238/107849815-fafd7480-6dfd-11eb-8833-26329b16d193.JPG)
+![dicka](https://user-images.githubusercontent.com/56273238/107859080-88a98600-6e37-11eb-865c-5ec40302ef90.JPG)
 
 Pjesa për testim përmban tre textbox-a: njërin për të shënuar path-in e log fajllit, njërin për të shënuar regular expression dhe tjetrin për shfaqjen e gjetjeve në log file. Në të njëjtën dritare përdoruesi ka mundësi që përmes klikimit të fotos së caktuar të gjejë rezultatet e caktuara në log file. Textbox-i i tretë përmban edhe një scrollbar që në rast që ka më shumë rezultate sesa që nxë, të mund t'i shohim.
 
